@@ -10,9 +10,9 @@ public class DatabaseConnection {
   
     static
     {
-        String url = "jdbc:mysql://localhost:3306/online_marketplace";
-        String user = "root";
-        String pass = "ademir299";
+        String url = "jdbc:mysql://sql11.freemysqlhosting.net:3306/sql11501957";
+        String user = "sql11501957";
+        String pass = "kuPR66ZrfC";
         try {
             Class.forName("com.mysql.cj.jdbc.Driver");
             con = DriverManager.getConnection(url, user, pass);
