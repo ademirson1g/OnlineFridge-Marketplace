@@ -1,9 +1,10 @@
 import axios from "axios";
+import { BASE_URL } from "./config"
 
 const AuthService = (function () {
     const _signin = async (credentials) => {
         try {
-            const response = await axios.post("/api/auth/login", credentials);
+            const response = await axios.post(BASE_URL + "/api/auth/login", credentials);
 
             if (response && response.data) {
                 localStorage.setItem("user", JSON.stringify(response.data))
@@ -23,7 +24,7 @@ const AuthService = (function () {
 
     const _signup = async (credentials) => {
         try {
-            return await axios.post("/api/auth/signup", credentials);
+            return await axios.post(BASE_URL + "/api/auth/signup", credentials);
         } catch (error) {
             console.log(error);
         }
