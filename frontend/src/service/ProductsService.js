@@ -1,10 +1,11 @@
 import axios from "axios";
 import authHeader from "./authHeader";
+import { BASE_URL } from "./config";
 
 const ProductService = (function () {
 	const _getAllByPage = async (pageNo, pageSize) => {
 		try {
-			const response = await axios.get("/api/product/get-all-by-page", { headers : authHeader(),
+			const response = await axios.get(BASE_URL + "/api/product/get-all-by-page", { headers : authHeader(),
 				params : {"page-no" : pageNo,
 					"page-size" : pageSize}});
 
@@ -16,7 +17,7 @@ const ProductService = (function () {
 
 	const _getAllByPageContains = async (pageNo, pageSize, values) => {
 		try {
-			const response = await axios.get("/api/product/get-all-by-page-contains", { headers : authHeader(),
+			const response = await axios.get(BASE_URL + "/api/product/get-all-by-page-contains", { headers : authHeader(),
 				params : {"page-no" : pageNo,
 					"page-size" : pageSize,
 					"query-word" : values.word}});
@@ -29,7 +30,7 @@ const ProductService = (function () {
 
 	const _getAllByPageWithoutBlackList = async (pageNo, pageSize) => {
 		try {
-			const response = await axios.get("/api/product/get-all-by-page-without-blacklist", { headers : authHeader(),
+			const response = await axios.get(BASE_URL + "/api/product/get-all-by-page-without-blacklist", { headers : authHeader(),
 			params : {"page-no" : pageNo,
 				"page-size" : pageSize}});
 
@@ -41,7 +42,7 @@ const ProductService = (function () {
 
 	const _getAllByPageWithoutBlackListContains = async (pageNo, pageSize, values) => {
 		try {
-			const response = await axios.get("/api/product/get-all-by-page-without-blacklist-contains", { headers : authHeader(),
+			const response = await axios.get(BASE_URL + "/api/product/get-all-by-page-without-blacklist-contains", { headers : authHeader(),
 				params : {"page-no" : pageNo,
 					"page-size" : pageSize,
 					"query-word" : values.word}});
@@ -54,7 +55,7 @@ const ProductService = (function () {
 
 	const _getById = async (id) => {
 		try {
-			const response = await axios.get("/api/product/get", { headers : authHeader(), params : {"id" : id}});
+			const response = await axios.get(BASE_URL + "/api/product/get", { headers : authHeader(), params : {"id" : id}});
 
 			return response;
 		} catch (error) {
@@ -64,7 +65,7 @@ const ProductService = (function () {
 
 	const _addToFavorites = async (id) => {
 		try {
-			const response = await axios.get("/api/favorite-list/add", { headers : authHeader(), params : {"id" : id}});
+			const response = await axios.get(BASE_URL + "/api/favorite-list/add", { headers : authHeader(), params : {"id" : id}});
 
 			return response;
 		} catch (error) {
@@ -76,7 +77,7 @@ const ProductService = (function () {
 
 	const _addToBlackList = async (id) => {
 		try {
-			const response = await axios.get("/api/black-list/add", { headers : authHeader(), params : {"id" : id}});
+			const response = await axios.get(BASE_URL + "/api/black-list/add", { headers : authHeader(), params : {"id" : id}});
 
 			return response;
 		} catch (error) {
@@ -87,7 +88,7 @@ const ProductService = (function () {
 
 	const _getFavorites = async () => {
 		try {
-			const response = await axios.get("/api/favorite-list/get-favorites", { headers : authHeader()});
+			const response = await axios.get(BASE_URL + "/api/favorite-list/get-favorites", { headers : authHeader()});
 
 			return response;
 		} catch (error) {
@@ -97,7 +98,7 @@ const ProductService = (function () {
 
 	const _removeFromFavorites = async (id) => {
 		try {
-			const response = await axios.get("/api/favorite-list/remove", { headers : authHeader(), params : {"id" : id}});
+			const response = await axios.get(BASE_URL + "/api/favorite-list/remove", { headers : authHeader(), params : {"id" : id}});
 
 			return response;
 		} catch (error) {
@@ -109,7 +110,7 @@ const ProductService = (function () {
 
 	const _removeProduct = async (id) => {
 		try {
-			const response = await axios.get("/api/product/remove", { headers : authHeader(), params : {"id" : id}});
+			const response = await axios.get(BASE_URL + "/api/product/remove", { headers : authHeader(), params : {"id" : id}});
 
 			return response;
 		} catch (error) {
@@ -122,7 +123,7 @@ const ProductService = (function () {
 
 	const _addProduct = async (values) => {
 		try {
-			const response = await axios.post("/api/product/add", values, { headers : authHeader()});
+			const response = await axios.post(BASE_URL + "/api/product/add", values, { headers : authHeader()});
 
 			return response;
 		} catch (error) {

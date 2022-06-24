@@ -1,10 +1,11 @@
 import axios from "axios";
 import authHeader from "./authHeader";
+import { BASE_URL } from "./config";
 
 const UsersService = (function () {
 	const _getAll = async () => {
 		try {
-			const response = await axios.get("/api/users/get-all", { headers : authHeader()});
+			const response = await axios.get(BASE_URL + "/api/users/get-all" , { headers : authHeader()});
 
 			return response;
 		} catch (error) {
@@ -13,7 +14,7 @@ const UsersService = (function () {
 	};
 	const _removeUser = async (id) => {
 		try {
-			const response = await axios.get("/api/users/remove", { headers : authHeader(), params : {"user-id" : id}});
+			const response = await axios.get(BASE_URL + "/api/users/remove", { headers : authHeader(), params : {"user-id" : id}});
 
 			return response;
 		} catch (error) {
@@ -23,7 +24,7 @@ const UsersService = (function () {
 
 	const _saveUser = async (credentials) => {
 		try {
-			const response = await axios.post("/api/users/add", { headers : authHeader(), body : {"credentials" : credentials}});
+			const response = await axios.post(BASE_URL + "/api/users/add", { headers : authHeader(), body : {"credentials" : credentials}});
 
 			return response;
 		} catch (error) {
