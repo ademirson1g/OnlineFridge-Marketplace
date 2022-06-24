@@ -13,16 +13,19 @@ const TodoItem = ({text}) => (
 	  };
 	  this.handleSubmit = this.handleSubmit.bind(this);
 	}
+
 	handleSubmit(e) {
 	  e.preventDefault();
 	  const todos = [...this.state.todos, this.state.newTodo];
 	  this.setState({todos, newTodo: ''});
 	}
+
 	render() {
 	  const {newTodo} = this.state;
 	  const todos = this.state.todos.map((t, i) => (
 		<TodoItem key={i} text={t} />
 	  ));
+	  
 	  return (
 		<div className="App">
 		  <h1>Simple Shopping List</h1>

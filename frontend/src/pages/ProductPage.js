@@ -29,7 +29,6 @@ const ProductPage = () => {
 			})
 	}
 
-
 	const handleFavoriteList = (productId) => {
 		ProductService.addToFavorites(productId)
 			.then((response) => {
@@ -44,6 +43,7 @@ const ProductPage = () => {
 				}
 			});
 	}
+	
 	const handleRemove = async (productId) => {
 		const response = await ProductsService.removeProduct(productId);
 

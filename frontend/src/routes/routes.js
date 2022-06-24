@@ -53,7 +53,7 @@ const AppRouter = () => {
 					</Switch>
 				</Container>
 			</BrowserRouter>
-			<ToastContainer position="bottom-right"
+		<ToastContainer position="bottom-right"
 							autoClose={5000}
 							hideProgressBar={false}
 							newestOnTop={false}

@@ -133,8 +133,6 @@ const ProductService = (function () {
 		}
 	};
 
-
-
 	return {
 		getAllByPageWithoutBlackList : _getAllByPageWithoutBlackList,
 		getAllByPage : _getAllByPage,

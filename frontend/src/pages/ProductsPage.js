@@ -1,5 +1,4 @@
 // Admin or user can see others redirects to login
-
 import React, {useEffect, useState} from 'react';
 import ProductsService from "../service/ProductsService";
 import {Link, useHistory} from "react-router-dom";
@@ -65,7 +64,6 @@ const ProductsPage = () => {
 			}
 		});
 	}
-
 
 	useEffect( () => {
 		getProducts(activePage,pageSize)
@@ -188,7 +186,6 @@ const ProductsPage = () => {
 					size='large'
 					siblingRange={1}
 					totalPages={10}
-					// Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
 					ellipsisItem={undefined}
 					firstItem={undefined}
 					lastItem={undefined}

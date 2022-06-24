@@ -45,7 +45,6 @@ const FavoriteListPage = () => {
 			}
 
 		});
-
 	}
 
 	return (

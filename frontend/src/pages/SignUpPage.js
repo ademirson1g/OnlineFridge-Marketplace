@@ -66,7 +66,6 @@ const SignUpPage = () => {
 		}
 	}
 
-
 	const toggleVisibility = () => {
 		setShowForm((prevState) => (!prevState));
 	}
