@@ -3,7 +3,6 @@ package ademir.com.example.demo.backend.service.abstracts;
 import org.springframework.http.ResponseEntity;
 import ademir.com.example.demo.backend.model.User;
 import ademir.com.example.demo.backend.payload.request.SignupRequest;
-
 import java.util.List;
 import java.util.Optional;
 

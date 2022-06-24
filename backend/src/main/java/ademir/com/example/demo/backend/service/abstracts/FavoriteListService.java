@@ -1,7 +1,6 @@
 package ademir.com.example.demo.backend.service.abstracts;
 
 import ademir.com.example.demo.backend.model.Product;
-
 import java.util.List;
 
 public interface FavoriteListService {

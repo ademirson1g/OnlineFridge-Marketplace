@@ -6,7 +6,6 @@ import org.springframework.web.bind.annotation.*;
 import ademir.com.example.demo.backend.model.User;
 import ademir.com.example.demo.backend.payload.request.SignupRequest;
 import ademir.com.example.demo.backend.service.abstracts.UserService;
-
 import javax.validation.Valid;
 import java.util.List;
 
@@ -30,7 +29,6 @@ public class UsersController {
     @PreAuthorize("hasRole('ADMIN')")
     public ResponseEntity<?> remove(@RequestParam("user-id") Integer id) {
         userService.deleteById(id);
-
         return ResponseEntity.ok("User removed from system");
     }
 

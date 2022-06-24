@@ -7,7 +7,6 @@ import ademir.com.example.demo.backend.model.Product;
 import ademir.com.example.demo.backend.payload.request.AddProductRequest;
 import ademir.com.example.demo.backend.service.abstracts.ProductService;
 import ademir.com.example.demo.backend.service.concretes.Log;
-
 import java.util.List;
 
 @RestController
@@ -60,7 +59,6 @@ public class ProductController {
         return productService.getAllByPageWithoutBlackList(pageNo,pageSize,queryWord);
     }
     
-
     @GetMapping("/get")
     @PreAuthorize("hasRole('USER') or hasRole('ADMIN')")
     public Product getProductById(@RequestParam("id") Integer id) {

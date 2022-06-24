@@ -3,7 +3,6 @@ package ademir.com.example.demo.backend.model;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-
 import javax.persistence.*;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.Size;
@@ -14,6 +13,7 @@ import java.util.Set;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+
 public class User {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -33,10 +33,8 @@ public class User {
             inverseJoinColumns = @JoinColumn(name = "role_id"))
     private Set<Role> roles;
 
-    
     @ManyToMany
     private List<Product> favoriteList;
-
 
     public User(String username, String password) {
         this.username = username;
@@ -47,11 +45,8 @@ public class User {
         favoriteList.add(product);
     }
 
-    
-
     public boolean isFavoriteListContainsProduct(Product product) {
         return favoriteList.contains(product);
     }
-
-   
+ 
 }

@@ -1,6 +1,5 @@
 package ademir.com.example.demo.backend.controller;
 
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.security.core.Authentication;
@@ -10,7 +9,6 @@ import ademir.com.example.demo.backend.model.Product;
 import ademir.com.example.demo.backend.security.UserDetailsImpl;
 import ademir.com.example.demo.backend.service.abstracts.FavoriteListService;
 import ademir.com.example.demo.backend.payload.response.MessageResponse;
-
 import java.util.List;
 
 @RestController

@@ -1,6 +1,5 @@
 package ademir.com.example.demo.backend.controller;
 
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -11,7 +10,6 @@ import ademir.com.example.demo.backend.security.JwtUtils;
 import ademir.com.example.demo.backend.service.abstracts.AuthService;
 import ademir.com.example.demo.backend.service.abstracts.RoleService;
 import ademir.com.example.demo.backend.service.abstracts.UserService;
-
 import javax.validation.Valid;
 
 @CrossOrigin(origins = "*", maxAge = 3600)

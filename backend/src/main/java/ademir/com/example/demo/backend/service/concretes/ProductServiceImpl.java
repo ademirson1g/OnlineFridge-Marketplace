@@ -12,7 +12,6 @@ import ademir.com.example.demo.backend.repository.ProductRepository;
 import ademir.com.example.demo.backend.security.UserDetailsImpl;
 import ademir.com.example.demo.backend.service.abstracts.ProductService;
 import ademir.com.example.demo.backend.service.abstracts.UserService;
-
 import java.util.List;
 
 @Service

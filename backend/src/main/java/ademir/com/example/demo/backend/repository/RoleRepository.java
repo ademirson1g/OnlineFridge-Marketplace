@@ -4,7 +4,6 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 import ademir.com.example.demo.backend.model.EnumRole;
 import ademir.com.example.demo.backend.model.Role;
-
 import java.util.Optional;
 
 @Repository

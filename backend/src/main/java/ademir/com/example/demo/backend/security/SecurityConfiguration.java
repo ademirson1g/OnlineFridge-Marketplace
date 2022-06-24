@@ -15,7 +15,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import ademir.com.example.demo.backend.service.concretes.UserDetailsServiceImpl;
-
 import javax.servlet.http.HttpServletResponse;
 
 @EnableWebSecurity
@@ -39,7 +38,6 @@ public class SecurityConfiguration
     public PasswordEncoder passwordEncoder() {
         return new BCryptPasswordEncoder();
     }
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder authenticationManagerBuilder) throws Exception {

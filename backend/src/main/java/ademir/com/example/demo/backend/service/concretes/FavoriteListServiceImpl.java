@@ -6,7 +6,6 @@ import ademir.com.example.demo.backend.model.User;
 import ademir.com.example.demo.backend.service.abstracts.FavoriteListService;
 import ademir.com.example.demo.backend.service.abstracts.ProductService;
 import ademir.com.example.demo.backend.service.abstracts.UserService;
-
 import java.util.List;
 
 @Service

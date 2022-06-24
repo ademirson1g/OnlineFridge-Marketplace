@@ -5,7 +5,6 @@ import ademir.com.example.demo.backend.model.EnumRole;
 import ademir.com.example.demo.backend.model.Role;
 import ademir.com.example.demo.backend.repository.RoleRepository;
 import ademir.com.example.demo.backend.service.abstracts.RoleService;
-
 import java.util.Optional;
 
 @Service

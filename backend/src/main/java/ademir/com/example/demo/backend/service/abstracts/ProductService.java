@@ -3,7 +3,6 @@ package ademir.com.example.demo.backend.service.abstracts;
 import org.springframework.http.ResponseEntity;
 import ademir.com.example.demo.backend.model.Product;
 import ademir.com.example.demo.backend.payload.request.AddProductRequest;
-
 import java.util.List;
 
 public interface ProductService {

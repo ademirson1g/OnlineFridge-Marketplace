@@ -1,7 +1,6 @@
 package ademir.com.example.demo.backend.payload.response;
 
 import lombok.Data;
-
 import java.util.List;
 
 @Data

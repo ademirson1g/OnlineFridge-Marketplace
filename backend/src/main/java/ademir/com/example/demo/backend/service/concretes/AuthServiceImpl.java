@@ -20,7 +20,6 @@ import ademir.com.example.demo.backend.security.UserDetailsImpl;
 import ademir.com.example.demo.backend.service.abstracts.AuthService;
 import ademir.com.example.demo.backend.service.abstracts.RoleService;
 import ademir.com.example.demo.backend.service.abstracts.UserService;
-
 import javax.validation.Valid;
 import java.util.HashSet;
 import java.util.List;

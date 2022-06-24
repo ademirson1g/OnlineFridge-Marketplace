@@ -7,7 +7,6 @@ import org.springframework.stereotype.Service;
 import ademir.com.example.demo.backend.model.User;
 import ademir.com.example.demo.backend.repository.UserRepository;
 import ademir.com.example.demo.backend.security.UserDetailsImpl;
-
 import javax.transaction.Transactional;
 
 @Service(value = "userDetailsServiceImpl")
