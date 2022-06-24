@@ -1,12 +1,11 @@
 package ademir.com.example.demo.backend.repository;
 
-
+import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
 
 import ademir.com.example.demo.backend.model.CustomList;
 
-@Repository
-public interface CustomListRepository extends JpaRepository<CustomList, Integer> {
-
+public interface CustomListRepository extends JpaRepository<CustomList, Long> {
+  List<CustomList> findByPublished(boolean published);
+  List<CustomList> findByTitleContaining(String title);
 }
