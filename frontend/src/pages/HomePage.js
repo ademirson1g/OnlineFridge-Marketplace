@@ -17,7 +17,7 @@ export default class Homepage extends Component {
 			ante, 
 			greeting, 
 			dd = date.getDate().toString(),
-			userName = "User"; 
+			userName = "Welcome"; 
 	
 		  if (hours < 12) {
 			ante = "AM";
@@ -101,8 +101,8 @@ export default class Homepage extends Component {
 		   <h1 id="time">12:00 AM</h1>
 		   <h3 id="day" className="display-5">Monday, January 01</h3>
 		   <h2 id="greeting">Good Morning</h2>
-		  </div>
-		  </div>
+		   </div>
+		</div>
 		  </div>	  
 	  )
 	}

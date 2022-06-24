@@ -15,7 +15,7 @@ const ProductsPage = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [flag, setFlag] = useState(false);
 	const history = useHistory();
-	const initialValues = {productName : "" , productDescription : ""}
+	const initialValues = {productName : ""}
 	const pageSize = 15;
 	const currentUser = AuthService.getCurrentUser();
 
@@ -105,7 +105,7 @@ const ProductsPage = () => {
 	}
 
 	const handleSearch = (values, actions) => {
-		if(currentUser.roles.includes("ROLE_ADMIN")){
+		if(currentUser.roles.includes("ROLE_USER")){
 			ProductsService.getAllByPageContains(1,pageSize,values)
 				.then((response) => {
 				if (response && response.status === StatusCodes.OK) {
@@ -188,6 +188,7 @@ const ProductsPage = () => {
 					size='large'
 					siblingRange={1}
 					totalPages={10}
+					// Heads up! All items are powered by shorthands, if you want to hide one of them, just pass `null` as value
 					ellipsisItem={undefined}
 					firstItem={undefined}
 					lastItem={undefined}
@@ -214,17 +215,6 @@ const ProductsPage = () => {
 									onChange={formik.handleChange}
 									value={formik.values.productName}/>
 							</div>
-
-							<div className="field">
-								<label>Product Description</label>
-								<input
-									type="text"
-									name="productDescription"
-									placeholder="Product Description"
-									onChange={formik.handleChange}
-									value={formik.values.productDescription}/>
-							</div>
-							
 							<Container textAlign="right">
 								<button className="ui positive basic button" type="submit">Add</button>
 							</Container>

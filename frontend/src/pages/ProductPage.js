@@ -33,6 +33,7 @@ const ProductPage = () => {
 			})
 	}
 
+
 	const handleFavoriteList = (productId) => {
 		ProductService.addToFavorites(productId)
 			.then((response) => {
@@ -86,12 +87,7 @@ const ProductPage = () => {
 						</Icon.Group>
 						Add product to favorites
 					</Button>
-					<Button basic compact color="black" size="medium">
-						<Icon.Group>
-							<Icon name='ban'/>
-							<Icon corner name='add'/>
-						</Icon.Group>
-					</Button>
+					
 				</Card.Content>
 				}
 				{currentUser.roles.includes("ROLE_ADMIN") &&
@@ -101,9 +97,7 @@ const ProductPage = () => {
 						Remove product
 					</Button>
 				</Card.Content>
-				
 				}
-				
 			</Card>
 
 		</div>

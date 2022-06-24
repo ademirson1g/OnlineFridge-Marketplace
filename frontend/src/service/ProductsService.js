@@ -132,6 +132,8 @@ const ProductService = (function () {
 		}
 	};
 
+
+
 	return {
 		getAllByPageWithoutBlackList : _getAllByPageWithoutBlackList,
 		getAllByPage : _getAllByPage,
@@ -143,7 +145,7 @@ const ProductService = (function () {
 		removeProduct : _removeProduct,
 		addProduct : _addProduct,
 		getAllByPageContains : _getAllByPageContains,
-		getAllByPageWithoutBlackListContains : _getAllByPageWithoutBlackListContains
+		getAllByPageWithoutBlackListContains : _getAllByPageWithoutBlackListContains,
 	};
 })();
 
