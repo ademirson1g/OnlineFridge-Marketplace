@@ -12,6 +12,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/product")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class ProductController {
     private final ProductService productService;
 

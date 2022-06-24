@@ -14,6 +14,7 @@ import ademir.com.example.demo.backend.payload.response.MessageResponse;
 import java.util.List;
 
 @RestController
+@CrossOrigin(origins = "*", maxAge = 3600)
 @RequestMapping("/api/favorite-list")
 public class FavoriteListController {
     private FavoriteListService favoriteListService;
