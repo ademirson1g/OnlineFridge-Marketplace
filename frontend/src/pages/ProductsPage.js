@@ -15,7 +15,7 @@ const ProductsPage = () => {
 	const [showForm, setShowForm] = useState(false);
 	const [flag, setFlag] = useState(false);
 	const history = useHistory();
-	const initialValues = {productName : ""}
+	const initialValues = {productName : "" , productDescription : ""}
 	const pageSize = 15;
 	const currentUser = AuthService.getCurrentUser();
 
@@ -213,6 +213,16 @@ const ProductsPage = () => {
 									placeholder="Product Name"
 									onChange={formik.handleChange}
 									value={formik.values.productName}/>
+							</div>
+
+							<div className="field">
+								<label>Product Description</label>
+								<input
+									type="text"
+									name="productDescription"
+									placeholder="Product Description"
+									onChange={formik.handleChange}
+									value={formik.values.productDescription}/>
 							</div>
 							
 							<Container textAlign="right">

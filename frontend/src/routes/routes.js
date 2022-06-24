@@ -10,6 +10,8 @@ import LoginPage from "../pages/LoginPage";
 import ProductPage from "../pages/ProductPage";
 import {ToastContainer} from "react-toastify";
 import React from "react";
+import CustomListPage from "../pages/CustomListPage";
+import SignUpPage from "../pages/SignUpPage";
 
 const AppRouter = () => {
 	return (
@@ -33,11 +35,17 @@ const AppRouter = () => {
 						<Route path="/users">
 							<UsersPage />
 						</Route>
+						<Route path="/custom-list">
+							<CustomListPage/>
+						</Route>
 						<Route path="/favorite-list">
 							<FavoriteListPage />
 						</Route>
 						<Route path="/login">
 							<LoginPage />
+						</Route>
+						<Route path="/signup">
+							<SignUpPage/>
 						</Route>
 						<Route path="/logout">
 							<LoginPage />

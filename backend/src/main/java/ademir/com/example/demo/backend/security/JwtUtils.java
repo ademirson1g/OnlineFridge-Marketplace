@@ -16,7 +16,7 @@ public class JwtUtils {
 
     private static final Key secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 
-    // 30 seconds
+    // 30 second
     private static final int jwtExpirationMs = 30 * 60 * 1000;
 
     public String generateJwtToken(Authentication authentication) {
@@ -42,6 +42,7 @@ public class JwtUtils {
     }
 
     public boolean validateJwtToken(String authToken){
+        
         try {
             Jwts.parserBuilder()
                     .setSigningKey(secretKey).build()

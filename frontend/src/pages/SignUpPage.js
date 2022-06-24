@@ -9,7 +9,7 @@ import * as Yup from "yup";
 import AuthService from "../service/AuthService";
 import {StatusCodes} from "http-status-codes";
 
-const UsersPage = () => {
+const SignUpPage = () => {
 	const [users, setUsers] = useState([]);
 	const [showForm, setShowForm] = useState(false);
 	const [flag, setFlag] = useState(false);
@@ -21,9 +21,6 @@ const UsersPage = () => {
 			.then((response) => {
 				if (response && response.status === StatusCodes.OK) {
 					setUsers(response.data);
-				}
-				else if (response && response.status === StatusCodes.UNAUTHORIZED) {
-					history.push("/login", {authError : true});
 				}
 				else if (response && response.status === StatusCodes.UNAUTHORIZED) {
 					history.push("/signup", {authError : false});
@@ -43,7 +40,6 @@ const UsersPage = () => {
 		username : Yup.string().required("No username provided."),
 		password : Yup.string().required("No password provided."),
 		repassword : Yup.string().oneOf([Yup.ref("password"), null], "Passwords must match"),
-		role : Yup.string().required("Please select a role")
 	});
 
 	const formik = useFormik(
@@ -57,33 +53,19 @@ const UsersPage = () => {
 
 		const credentials = {"username" : values.username,
 							 "password" : values.password,
-							 "role" : [values.role]}
+							 }
 
 		const response = await AuthService.signup(credentials);
 		if((response && response.status === StatusCodes.OK)) {
-			toastify("success", "User is added to system");
+			toastify("success", "Registration Sucesfull");
 			setFlag(prevState => (!prevState));
 		} else if (response && response.status === StatusCodes.UNAUTHORIZED) {
-			history.push("/login", {authError : true});
+			history.push("/signup", {authError : true});
 		} else {
-			toastify("error", "User couldnt be added to system");
+			toastify("error", "User already exist in the database");
 		}
 	}
 
-	const handleRemoveUser = (userId) => {
-		UsersService.removeUser(userId).then((response) => {
-			if (response.status === StatusCodes.OK) {
-				toastify("success", "User is removed");
-				setFlag(prevState => (!prevState));
-			}
-			else if (response && response.status === StatusCodes.UNAUTHORIZED) {
-				history.push("/login", {authError : true});
-			}
-			else {
-				toastify("error", "User couldn't be removed");
-			}
-		});
-	}
 
 	const toggleVisibility = () => {
 		setShowForm((prevState) => (!prevState));
@@ -91,14 +73,11 @@ const UsersPage = () => {
 
 	return (
 		<div>
-			<h1>Users</h1>
+			<h1>Sign Up</h1>
 			<Divider/>
 			<List divided verticalAlign="middle">
 				{!! users && users.map((user) =>(
 					<List.Item key={user.id}>
-						<List.Content floated="right">
-							<Button basic compact color="red" onClick={() => handleRemoveUser(user.id)}>Remove</Button>
-						</List.Content>
 						<List.Content><h3>{user.username}</h3></List.Content>
 
 					</List.Item>
@@ -106,7 +85,7 @@ const UsersPage = () => {
 			</List>
 			<Divider hidden />
 			<Button basic primary
-				content={showForm ? "Hide" : "Add"}
+				content={showForm ? "Hide" : "Please Press Button to Sign Up"}
 				onClick={() => toggleVisibility()}
 			/>
 			<Divider hidden />
@@ -153,20 +132,9 @@ const UsersPage = () => {
 								{formik.errors.repassword}</div>
 							}
 						</div>
-						<div className="field">
-							<label>Role</label>
-							<select id="role" name="role" onChange={formik.handleChange}>
-								<option value="" hidden>Role</option>
-								<option value="USER">User</option>
-								<option value="ADMIN">Admin</option>
-							</select>
-							{formik.errors.role &&
-							<div className="ui pointing red basic label">
-								{formik.errors.role}</div>
-							}
-						</div>
+						
 						<Container textAlign="right">
-							<button className="ui positive basic button" type="submit">Add</button>
+							<button className="ui positive basic button" type="submit">Please Press Button to Sign Up</button>
 						</Container>
 					</form>
 					)}
@@ -175,4 +143,4 @@ const UsersPage = () => {
 	);
 };
 
-export default UsersPage;
+export default SignUpPage;

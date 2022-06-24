@@ -51,6 +51,15 @@ const NavBar = (props) => {
 				/>
 				</>
 				}
+				{(user.role === "ROLE_USER") &&
+				<>
+				<Menu.Item
+					name="Custom List"
+					as={NavLink}
+					to={"/custom-list"}
+				/>
+				</>
+				}
 				<Menu.Menu position="right">
 					{!!user.username ?
 						<Menu.Item
@@ -61,9 +70,21 @@ const NavBar = (props) => {
 						/>
 						 :
 						<Menu.Item
-							name='login'
+							name='Login'
 							as={NavLink}
 							to={"/login"}
+						/>
+					}
+				</Menu.Menu>
+				<Menu.Menu>
+					{!!user.username ?
+						<Menu.Item
+						/>
+						 :
+						<Menu.Item
+							name='Sign Up'
+							as={NavLink}
+							to={"/signup"}
 						/>
 					}
 				</Menu.Menu>
