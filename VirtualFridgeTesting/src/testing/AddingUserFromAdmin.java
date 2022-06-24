@@ -14,7 +14,7 @@ public class AddingUserFromAdmin {
 		WebDriver driver = new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
-		driver.get("http://localhost:3000/home");
+		driver.get("https://guarded-bastion-83744.herokuapp.com/home");
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div[1]/div/div[1]/a")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[1]/input")).sendKeys("admin");
@@ -38,6 +38,8 @@ public class AddingUserFromAdmin {
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[4]/select/option[2]")).click();
 		Thread.sleep(2000);
 		driver.findElement(By.xpath("/html/body/div/div/div/div/div[2]/div/form/div[5]/button")).click();
+		Thread.sleep(2000);
+		driver.findElement(By.xpath("/html/body/div/div/div/div/div[1]/div/div[1]/a")).click();
 		
 	}
 
