@@ -21,10 +21,6 @@ const LoginPage = () => {
 		password : Yup.string().required("No password provided.")
 	})
 
-	const sleep = (milliseconds) => {
-		return new Promise(resolve => setTimeout(resolve, milliseconds))
-	}
-
 	const handleSubmit = async (values, actions) => {
 		actions.resetForm();
 		const response = await AuthService.signin(values);
@@ -39,8 +35,7 @@ const LoginPage = () => {
 			if (userObject) {
 				dispatch(setUser(userObject));
 			}
-			await sleep(1500);
-
+	
 			history.push("/");
 		}
 		else {

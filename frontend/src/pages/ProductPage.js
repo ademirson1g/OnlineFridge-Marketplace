@@ -14,10 +14,6 @@ const ProductPage = () => {
 	const [currentUser, setCurrentUser] = useState({name : "", roles : []});
 	const history = useHistory();
 
-	const sleep = (milliseconds) => {
-		return new Promise(resolve => setTimeout(resolve, milliseconds))
-	}
-
 	const getProduct = (id) => {
 		ProductService.getById(id)
 			.then((response) => {
@@ -53,7 +49,6 @@ const ProductPage = () => {
 
 		if (response && response.status === StatusCodes.OK) {
 			toastify(" ", "Product removed from system");
-			await sleep(1500);
 			history.push("/products");
 		}
 		else if (response && response.status === StatusCodes.UNAUTHORIZED) {
